@@ -12,12 +12,12 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
         People man = new Man("Test","Test2","Test1",new Date());
-        Serialize.serialazeble(man);
-        System.out.println(Serialize.deserialazeble());
+        Serialize.serialazable(man);
+        System.out.println(Serialize.deserialazable());
 
         People woman = new Woman("TestW","TestW2","TestW",new Date());
-        Serialize.serialazeble(woman);
-        System.out.println(Serialize.deserialazeble());
+        Serialize.serialazable(woman);
+        System.out.println(Serialize.deserialazable());
 
 
     }

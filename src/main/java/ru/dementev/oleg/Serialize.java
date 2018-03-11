@@ -11,11 +11,7 @@ import java.io.*;
  */
 public interface Serialize {
 
-    void serialize(People people);
-
-    People deserialize();
-
-    static boolean serialazeble(People people) {
+    static boolean serialazable(People people) {
         File file = new File("text.txt");
         try (FileOutputStream fileOutputStream = new FileOutputStream(file);
              ObjectOutputStream inputStream = new ObjectOutputStream(fileOutputStream)) {
@@ -27,7 +23,7 @@ public interface Serialize {
         return true;
     }
 
-    static People deserialazeble() {
+    static People deserialazable() {
         File file = new File("text.txt");
         try (FileInputStream fileInputStream = new FileInputStream(file);
              ObjectInputStream inputStream = new ObjectInputStream(fileInputStream)) {
