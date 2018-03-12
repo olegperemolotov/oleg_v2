@@ -11,7 +11,7 @@ import java.io.*;
  */
 public interface Serialize {
 
-    static boolean serialazable(People people) {
+    /*static boolean serialazable(People people) {
         File file = new File("text.txt");
         try (FileOutputStream fileOutputStream = new FileOutputStream(file);
              ObjectOutputStream inputStream = new ObjectOutputStream(fileOutputStream)) {
@@ -38,5 +38,5 @@ public interface Serialize {
         }
 
         return null;
-    }
+    }*/
 }

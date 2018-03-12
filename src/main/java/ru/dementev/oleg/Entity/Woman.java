@@ -1,18 +1,50 @@
 package ru.dementev.oleg.Entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by Антон Дементьев on 11.03.2018.
  */
-public class Woman extends People {
+public class Woman implements Human {
 
-    private final String sex = "Woman";
+    private   final String sex = "woman";
+    protected final String firstName;
+    protected final String lastName;
+    protected final String middelName;
+    protected final Date   birtday;
+
 
     public Woman(String firstName, String lastName, String middelName, Date birtday) {
-        super(firstName, lastName, middelName, birtday);
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.middelName=middelName;
+        this.birtday=birtday;
+
     }
 
+
+    @Override
+    public String getFirstName() {
+        return firstName;
+    }
+
+    @Override
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public String getMiddelName() {
+        return middelName;
+    }
+
+    @Override
+    public Date getBirtday() {
+        return birtday;
+    }
+
+    @Override
     public String getSex() {
         return sex;
     }
@@ -21,23 +53,23 @@ public class Woman extends People {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-
         Woman woman = (Woman) o;
-
-        return sex.equals(woman.sex);
+        return Objects.equals(sex, woman.sex) &&
+                Objects.equals(firstName, woman.firstName) &&
+                Objects.equals(lastName, woman.lastName) &&
+                Objects.equals(middelName, woman.middelName) &&
+                Objects.equals(birtday, woman.birtday);
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + sex.hashCode();
-        return result;
+
+        return Objects.hash(sex, firstName, lastName, middelName, birtday);
     }
 
     @Override
     public String toString() {
-        return "Woman{" + super.toString() +
+        return "Man{" + super.toString() +
                 "sex='" + sex + '\'' +
                 "} ";
     }
