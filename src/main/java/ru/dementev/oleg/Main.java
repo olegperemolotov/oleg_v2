@@ -3,6 +3,9 @@ package ru.dementev.oleg;
 import ru.dementev.oleg.Entity.Man;
 import ru.dementev.oleg.Entity.Human;
 import ru.dementev.oleg.Entity.Woman;
+import ru.dementev.oleg.Entity.CreateMan;
+import ru.dementev.oleg.Entity.CreateWoman;
+import ru.dementev.oleg.Entity.CreateHuman;
 
 import java.util.Date;
 
@@ -11,12 +14,16 @@ import java.util.Date;
  */
 public class Main {
     public static void main(String[] args) {
-        Man man = new Man("Test","Test2","Test1",new Date());
-        SerializeMan.deserialazable();
+       // Man man = new Man("Test","Test2","Test1",new Date());
+        CreateHuman createhuman1 = new CreateMan("TestM","TestM","TestM",new Date());
+        CreateHuman createhuman2 = new CreateWoman("TestW","TestW","TestW",new Date());
+
+        Serialize.serialazable(createhuman1.create());
+
+        // SerializeMan.deserialazable();
        // Serialize.serialazable(man);
        // System.out.println(Serialize.deserialazable());
 
-       // People woman = new Woman("TestW","TestW2","TestW",new Date());
        // Serialize.serialazable(woman);
        // System.out.println(Serialize.deserialazable());
 
